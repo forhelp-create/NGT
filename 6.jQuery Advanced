@@ -1,0 +1,119 @@
+6. jQuery Advanced
+
+(a)Animation effects, Chaining
+********Animation effects
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Animation</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+#box {width:100px; height:100px; background:blue; position:relative; }
+</style>
+</head>
+<body>
+<button id="animate">Animate Box</button>
+<div id="box"</div> 
+
+<script>
+$(document).ready(function(){
+$("#animate").click(function(){
+$("#box").animate({
+left:'250px',
+height:'150px',
+width:'150px',
+opacity:0.5
+}, 2000);
+});
+});
+</script>
+                                                   
+
+  ************** Chaining
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Chaining</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <p id="text">Watch me change!</p>
+    <button id="chain">Click Me</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#chain").click(function () {
+                $("#text").css("color", "red")
+                          .slideUp(1000)
+                          .slideDown(1000)
+                          .fadeOut(1000)
+                          .fadeIn(1000);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+                           
+(b)Callback, Get and Set contents
+*********Callback
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery CallBack</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<button id="fade">Fade Out with Callback</button>
+<p id="msg">I will fade out first, then show an alert.</p>
+
+<script>
+$(document).ready(function(){
+  $("#fade").click(function(){
+    $("#msg").fadeOut(2000, function(){
+      alert("Paragraph is now hidden!");
+    });
+  });
+});
+</script>
+</body>
+</html>
+OUTPUT:-
+ 
+ 
+
+
+**********Get and Set contents
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Get and Set</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<p id="para">This is original text.</p>
+<button id="get">Get Text</button>
+<button id="set">Set Text</button>
+
+<script>
+$(document).ready(function(){
+$("#get").click(function(){
+alert($("#para").text());
+});
+$("#set").click(function(){
+$("#para").text("This is new text set by jQuery!");
+});
+});
+</script>
+</body>
+OUTPUT:-
+                                              
+ 
+ 
+
+
+
+
+
