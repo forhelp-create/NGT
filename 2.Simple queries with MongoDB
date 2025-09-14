@@ -1,0 +1,27 @@
+2.	Simple queries with MongoDB
+>use school
+
+**create:-
+>db.students.insertMany([{name:"Aarchie",age:20,rollno:22},{name:"Tanvi",age:21,rollno:07},
+{name:"Ravi",age:18,rollno:33},{name:"Vikrant",age:22,rollno:06}])
+
+**update age of someone:-
+>db.students.updateOne({name:"Aarchie"},{$set:{age:21}})
+ 
+ **update the one’s having age 21 to 25
+>db.students.updateMany({age:21},{$set:{age:25}})
+ 
+
+**show that the one’s having age 18 is not eligible
+>db.students.updateMany({age:18},{$set:{age:"Not Eligible"}})
+ 
+
+**age>=21 are eligible
+>db.students.updateMany({age:{$gte:21}},{$set:{"is eligible:":true}})
+ 
+**delete someone’s name
+>db.students.deleteOne({name:”Tanvi”})
+ 
+
+**delete the one’s having age 18
+>db.students.deleteMany({age:"Not Eligible"})
