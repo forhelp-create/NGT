@@ -1,0 +1,15 @@
+1.	MongoDB Basics
+
+ (a)Write a MongoDB query to create and drop database
+> use school
+>db.students.insertMany([{name:"Aarchie",age:20,rollno:22},{name:"Tanvi",age:21,rollno:07},{name:"Ravi",age:18,rollno:33},{name:"Vikrant",age:22,rollno:06}])
+>db.dropDatabase()
+ 
+
+(b) Write a MongoDB query to create, display and drop collection
+>use school
+>db.students.insertMany([{name:"Aarchie",age:20,rollno:22},{name:"Tanvi",age:21,rollno:07},{name:"Ravi",age:18,rollno:33},{name:"Vikrant",age:22,rollno:06}])
+>db.students.find()
+>db.students.drop()
+ 
+
