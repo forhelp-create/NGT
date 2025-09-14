@@ -1,0 +1,100 @@
+5. Programs on basic jQuery
+
+(a)	jQuery basic, jQuery events
+
+*********jQuery basic
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic jQuery Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h2>Hello, jQuery!</h2>
+  <button id="btn">Click Me</button>
+
+  <script>
+    $(document).ready(function() {
+      $("#btn").click(function() {
+        $("h2").text("Welcome to jQuery!");
+      });
+    });
+  </script>
+</body>
+</html>
+
+           
+
+***********jQuery Events
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Events</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<p id="para">Hover or Click Me!</p>
+
+<script>
+$(document).ready(function(){
+$("#para").click(function(){
+$(this).css("color","red");
+});
+$("#para").mouseenter(function(){
+$(this).css("background","yellow");
+});
+$("#para").mouseleave(function(){
+$(this).css("background","white");
+});
+});
+</script>
+
+                                  
+
+(b)	jQuery Selectors, jQuery Hide and Show effects
+*******jQuery Selectors
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Selectors</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<p class="cls">This is Class Selectors</p>
+<p id="id1">This is Id Selector</p>
+<p>This is Tag Selector</p>
+<script>
+$(document).ready(function(){
+$(".cls").css("color","blue");
+$("#id1").css("font-size","20px");
+$("p").css("font-weight","bold");
+});
+</script>
+</body>
+</html>
+
+
+******jQuery hide and show effects
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hide Show Example</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<p id="text">This is a paragraph.</p>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+<script>
+$(document).ready(function(){
+$("#hide").click(function(){
+$("#text").hide();
+});
+$("#show").click(function(){
+$("#text").show();
+});
+});
+</script>
+</body>
+
