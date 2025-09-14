@@ -1,0 +1,22 @@
+4. Replication
+
+(a)	Write a MongoDB query to create Replica of existing database
+>use school
+>db.students.insertMany([{name:"Rahul",age:21,course:"B.Sc.IT",subjects:["AI","AWP"]},{name:"Aarchie",age:22,course:"B.Sc.IT",subjects:["AI","SPM"]},{name:"Tanvi",
+age:23,course:"B.Sc.IT",subjects:["SPM","NGT"]}])
+ 
+>db.students.find({age:{$gt:21}})
+
+
+>db.students.aggregate([{$match:{}},{$out:{db:"NEWDB",coll:"New_coll"}}])
+>show dbs
+ 
+
+>use NEWDB
+>show collections
+
+
+>db.New_coll.find()
+ 
+
+
