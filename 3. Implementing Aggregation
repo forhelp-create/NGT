@@ -1,0 +1,24 @@
+3.	Implementing Aggregation
+
+(a)	Write a MongoDB query to use sum, avg, min and max expression.
+>use shop
+
+>db.orders.insertMany([{item:"pen",qty:10,price:5},{item:"book",qty:2,price:100},{item:"pencil",qty:2,price:200},{item:"bag",qty:1,price:500}])
+ 
+>db.orders.aggregate([{$group:{_id:null,totalQuantity:{$sum:"$Quantity"},averagePrice:{$avg:"$price"},minPrice:{$min:"$price"},maxPrice:{$max:"$price"}}}])
+ 
+>db.orders.aggregate([{$addFields:{amount:{$multiply:["$qty","$price"]}}}])
+
+ 
+
+(b)	Write a MongoDB query to push and addToSet expression
+>use company
+
+>db.sales.insertMany([{id:1,cust:"Aarchie",item:"apple"},{id:2,cust:"Tanvi",item:"apple"},{id:3,cust:"Vikrant",item:"strawberry"},{id:4,cust:"Ravi",item:"strawberry"},{id:5,cust:"Aarchie",item:"pear"},{id:6,cust:"Tanvi",item:"banana"},{id:7,cust:"Vikrant",item:"apple"},{id:8,cust:"Ravi",item:"apple"},{id:9,cust:"Aarchie",item:"pear"},{id:10,cust:"Vikrant",item:"apple"}])
+
+>db.sales.aggregate([{$group:{_id:"$cust",allitem:{$push:"$item"}}}])
+
+>db.sales.aggregate([{$group:{_id:"$cust",uniqueitem:{$addToSet:"$item"}}}])
+
+ 
+
